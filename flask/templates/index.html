@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Medicamentos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Lista de Medicamentos</h1>
+        <ul>
+            {% for medicamento in medicamentos %}
+            <li>{{ medicamento[1] }} - {{ medicamento[2] }} mg - {{ medicamento[4] }} - {{ medicamento[5] }} - {{ medicamento[6] }}</li>
+            {% endfor %}
+        </ul>
+        <a href="{{ url_for('novo_medicamento') }}"><button class="add-medicine">Adicionar Novo Medicamento</button></a>
+        <a href="{{ url_for('limpar_medicamento') }}" class="clear-btn">Limpar Lista de Medicamentos</a>
+    </div>
+</body>
+</html>
